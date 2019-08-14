@@ -58,6 +58,35 @@ class EbayEnterprise_Affiliate_Block_Beacon extends Mage_Core_Block_Template
 	 * @see self::_getOrder
 	 */
 	protected $_order;
+    /** @var  EbayEnterprise_Affiliate_Helper_Data */
+    protected $_helper = null;
+    /** @var  EbayEnterprise_Affiliate_Helper_Config */
+    protected $_configHelper = null;
+
+    /**
+     * @return EbayEnterprise_Affiliate_Helper_Data
+     */
+    protected function _getHelper()
+    {
+        if (!$this->_helper) {
+            $this->_helper = Mage::helper('eems_affiliate');
+        }
+
+        return $this->_helper;
+    }
+
+    /**
+     * @return EbayEnterprise_Affiliate_Helper_Config
+     */
+    protected function _getConfigHelper()
+    {
+        if (!$this->_configHelper) {
+            $this->_configHelper = Mage::helper('eems_affiliate/config');
+        }
+
+        return $this->_configHelper;
+    }
+
 	/**
 	 * Get the last order.
 	 * @return Mage_Sales_Model_Order | null
@@ -167,13 +196,26 @@ class EbayEnterprise_Affiliate_Block_Beacon extends Mage_Core_Block_Template
 	}
 	/**
 	 * Whether or not to display the beacon.
+     *
+     * Show the pixel only if tracking is enabled and we have a valid order
+     * AND either conditional pixel logic is OFF or it is ON and we have
+     * a valid cookie.
+     *
 	 * @return bool
 	 */
 	public function showBeacon()
-	{
-		return (
-			Mage::helper('eems_affiliate/config')->isEnabled() &&
-			$this->_getOrder() instanceof Mage_Sales_Model_Order
-		);
-	}
+    {
+        $config = $this->_getConfigHelper();
+
+        return (
+            (
+                $config->isEnabled() &&
+                $this->_getOrder() instanceof Mage_Sales_Model_Order
+            ) &&
+            (
+                $this->_getHelper()->isValidCookie() ||
+                !$config->isConditionalPixelEnabled()
+            )
+        );
+    }
 }

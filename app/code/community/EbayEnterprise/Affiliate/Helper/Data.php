@@ -18,6 +18,11 @@
 
 class EbayEnterprise_Affiliate_Helper_Data extends Mage_Core_Helper_Abstract
 {
+	/** value for the source cookie */
+	const SOURCE_KEY_VALUE = 'eean';
+	/** prefix added to the source key name set in the admin panel to create a unique cookie name */
+	const SOURCE_COOKIE_PREFIX = 'ebay_enterprise_affiliate_';
+
 	/**
 	 * Build the beacon url given an array keys
 	 * @param array $params
@@ -101,4 +106,31 @@ class EbayEnterprise_Affiliate_Helper_Data extends Mage_Core_Helper_Abstract
 	{
 		return $value?'yes':'no';
 	}
+
+	/**
+	 * helper function to take the source key name set in the admin panel
+	 * and prepend a string to create a unique name for the cookie
+	 *
+	 * @return string
+	 */
+	public function getSourceCookieName()
+	{
+		$key = Mage::helper('eems_affiliate/config')->getSourceKeyName();
+
+		return self::SOURCE_COOKIE_PREFIX.$key;
+	}
+
+	/**
+	 * True if the cookie exists and has a value of SOURCE_KEY_VALUE
+	 * False otherwise
+	 * 
+	 * @return bool
+	 */
+	public function isValidCookie()
+	{
+		$cookie = $this->getSourceCookieName();
+        $value = Mage::getModel('core/cookie')->get($cookie);
+        return ($value === self::SOURCE_KEY_VALUE);
+	}
 }
+

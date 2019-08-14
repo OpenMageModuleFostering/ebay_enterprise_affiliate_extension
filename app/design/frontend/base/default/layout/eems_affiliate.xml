@@ -15,6 +15,11 @@
 
 -->
 <layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <block type="eems_affiliate/tracking" name="eems_affiliate.tracking" template="eems_affiliate/tracking.phtml"/>
+        </reference>
+    </default>
 	<checkout_affiliate_success translate="label">
 		<reference name="before_body_end">
 			<block type="eems_affiliate/beacon" name="eems_affiliate.beacon" template="eems_affiliate/beacon.phtml"/>
