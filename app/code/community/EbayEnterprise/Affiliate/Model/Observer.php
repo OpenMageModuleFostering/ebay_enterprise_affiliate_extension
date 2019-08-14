@@ -26,6 +26,11 @@ class EbayEnterprise_Affiliate_Model_Observer
      */
     public function createProductFeed()
     {
+        if (!Mage::getStoreConfig('marketing_solutions/eems_affiliate/product_feed_enabled')) {
+            Mage::log(Mage::helper('eems_affiliate')->__('Product feed disabled'), Zend_Log::NOTICE);
+            return;
+        }
+
         $helper = Mage::helper('eems_affiliate');
         foreach ($helper->getAllProgramIds() as $programId) {
             $store = $helper->getStoreForProgramId($programId);
@@ -45,10 +50,14 @@ class EbayEnterprise_Affiliate_Model_Observer
      */
     public function createCorrectedOrdersFeed()
     {
+        if (!Mage::getStoreConfig('marketing_solutions/eems_affiliate/order_feed_enabled')) {
+            Mage::log(Mage::helper('eems_affiliate')->__('Corrected order feed disabled'), Zend_Log::NOTICE);
+            return;
+        }
+
         $startTime = time();
 
-        $feedAlias = Mage::helper('eems_affiliate/config')->isItemizedOrders() ?
-            'feed_order_itemized' : 'feed_order_basic';
+        $feedAlias = 'feed_order_'.Mage::helper('eems_affiliate/config')->getOrderType();
 
         Mage::log(sprintf('[%s] Generating %s feed', __CLASS__, $feedAlias), Zend_Log::INFO);
 

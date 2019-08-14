@@ -16,7 +16,7 @@ http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.p
 <config>
     <modules>
         <EbayEnterprise_Affiliate>
-            <version>1.0.0.1</version>
+            <version>1.2.0.2</version>
         </EbayEnterprise_Affiliate>
     </modules>
     <global>
@@ -48,7 +48,7 @@ http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.p
         <jobs>
             <eems_affiliate_generate_product_feed>
                 <schedule>
-                    <cron_expr>0 */3 * * *</cron_expr>
+                    <cron_expr>0 3 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>eems_affiliate/observer::createProductFeed</model>
@@ -56,7 +56,7 @@ http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.p
             </eems_affiliate_generate_product_feed>
             <eems_affiliate_generate_corrected_order_feed>
                 <schedule>
-                    <cron_expr>0 */3 * * *</cron_expr>
+                    <cron_expr>0 3 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>eems_affiliate/observer::createCorrectedOrdersFeed</model>
@@ -72,12 +72,13 @@ http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.p
                 <!-- use comma to add more js files-->
                 <beacon_url>https://t.pepperjamnetwork.com/track</beacon_url>
                 <export_path>var/export/eems_affiliate/</export_path>
-                <int>ITEMIZED</int>
-                <itemized_orders>1</itemized_orders>
+                <order_type>itemized</order_type>
                 <program_id/>
                 <transaction_type>1</transaction_type>
                 <conditional_pixel_enabled>0</conditional_pixel_enabled>
                 <source_key_name>eean</source_key_name>
+                <product_feed_enabled>1</product_feed_enabled>
+                <order_feed_enabled>1</order_feed_enabled>
                 <feeds>
                     <callback_mappings>
                         <program_id>
@@ -114,21 +115,67 @@ http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.p
                                 <key>sku</key>
                             </params>
                         </item_id>
-                        <row_total>
+                        <item_price>
                             <class>eems_affiliate/map_order</class>
-                            <method>getRowTotal</method>
+                            <method>getItemPrice</method>
                             <type>helper</type>
-                            <column_name>TOTALAMOUNT</column_name>
+                            <column_name>AMOUNT</column_name>
                             <params>
                                 <format>%.2f</format>
                             </params>
-                        </row_total>
+                        </item_price>
                         <item_quantity>
                             <class>eems_affiliate/map_order</class>
                             <method>getItemQuantity</method>
                             <type>helper</type>
                             <column_name>QUANTITY</column_name>
                         </item_quantity>
+                        <dynamic_program_id>
+                            <class>eems_affiliate/map</class>
+                            <method>getProgramId</method>
+                            <type>helper</type>
+                            <column_name>PROGRAM_ID</column_name>
+                        </dynamic_program_id>
+                        <dynamic_item_order_id>
+                            <class>eems_affiliate/map_order</class>
+                            <method>getItemOrderId</method>
+                            <type>helper</type>
+                            <column_name>ORDER_ID</column_name>
+                            <params>
+                                <format>%.50s</format>
+                            </params>
+                        </dynamic_item_order_id>
+                        <dynamic_item_id>
+                            <class>eems_affiliate/map_order</class>
+                            <method>getItemId</method>
+                            <type>helper</type>
+                            <column_name>ITEM_ID</column_name>
+                            <params>
+                                <format>%.50s</format>
+                                <key>sku</key>
+                            </params>
+                        </dynamic_item_id>
+                        <dynamic_item_price>
+                            <class>eems_affiliate/map_order</class>
+                            <method>getItemPrice</method>
+                            <type>helper</type>
+                            <column_name>ITEM_PRICE</column_name>
+                            <params>
+                                <format>%.2f</format>
+                            </params>
+                        </dynamic_item_price>
+                        <category>
+                            <class>eems_affiliate/map_order</class>
+                            <method>getCategory</method>
+                            <type>helper</type>
+                            <column_name>CATEGORY</column_name>
+                        </category>
+                        <new_to_file>
+                            <class>eems_affiliate/map_order</class>
+                            <method>getNewToFile</method>
+                            <type>helper</type>
+                            <column_name>NEW_TO_FILE</column_name>
+                        </new_to_file>
                         <order_amount>
                             <class>eems_affiliate/map_order</class>
                             <method>getOrderAmount</method>
@@ -857,8 +904,12 @@ http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.p
                             </params>
                         </zoom>
                     </callback_mappings>
+                    <order_dynamic>
+                        <fields>dynamic_program_id,dynamic_item_order_id,dynamic_item_id,dynamic_item_price,item_quantity,category,new_to_file</fields>
+                        <file_name_format>%s_transactions_corrected_%s.csv</file_name_format>
+                    </order_dynamic>
                     <order_itemized>
-                        <fields>program_id,item_order_id,item_id,row_total,item_quantity,reason</fields>
+                        <fields>program_id,item_order_id,item_id,item_price,item_quantity,reason</fields>
                         <file_name_format>%s_transactions_corrected_%s.csv</file_name_format>
                     </order_itemized>
                     <order_basic>

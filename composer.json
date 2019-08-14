@@ -3,11 +3,11 @@
     "type": "magento-module",
     "license": "EULA",
     "homepage": "",
-    "description": "eBay Enterprise Affiliate Extension.",
+    "description": "Bay Enterprise Affiliate Extension.",
     "authors": [
     {
-        "name": "Michael A. Smith",
-        "email": "msmith3@ebay.com"
+        "name": "Philip Preston",
+        "email": "phpreston@pepperjam.com"
     }
 ],
     "suggest": {
