@@ -1,50 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>eBay_Enterprise_Affiliate_Extension</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
-    <license uri="http://www.ebayenterprise.com/files/pdf/Magento_Connect_Extensions_EULA_050714.pdf">eBay Enterprise Magento Extensions End User License Agreement</license>
+    <license>EULA</license>
     <channel>community</channel>
     <extends/>
-    <summary>Connect with 200+ affiliate publishers, generate reports, expand customer outreach, and drive sales.</summary>
-    <description>&lt;p&gt;Launching an affiliate marketing program has never been easier. With the eBay Enterprise Affiliate Extension, you can start driving traffic and revenue right now. The extension empowers merchants with:&lt;p /&gt;&#xD;
-&lt;ol&gt;&#xD;
-&lt;li&gt;Automated integration and on-boarding&lt;/li&gt;&#xD;
-&lt;li&gt;Easy-to-use tracking integration&lt;/li&gt;&#xD;
-&lt;li&gt;Ability to track and record affiliate sales and conversions&lt;/li&gt;&#xD;
-&lt;li&gt;Flexible configuration&lt;/li&gt;&#xD;
-&lt;li&gt;Product feed export automated nightly in eBay Enterprise Affiliate format&lt;/li&gt;&#xD;
-&lt;li&gt;Correction feed automated nightly in eBay Enterprise Affiliate format&lt;/li&gt;&#xD;
-&lt;/ol&gt;&#xD;
-&lt;p /&gt;With the eBay Enterprise Affiliate Extension tracking in place, you&#x2019;ll gain instant access to the program&#x2019;s user-friendly interface&#x2014;along with the tracking technology, informative analytics, and innovative applications you need to expand your online presence.&lt;/p&gt;&#xD;
-&lt;p&gt;What makes eBay&#x2019;s affiliate program different from all the others? Good question. Here are some of our program&#x2019;s exclusive features:&lt;/p&gt;&#xD;
-&lt;h2&gt;Do it all in one place&lt;/h2&gt;&#xD;
-&lt;p&gt;With eBay Enterprise Affiliate, you can access and recruit over 200,000 active network publishers across 20+ promotional categories and 30+ verticals. Plus, you can manage your publisher&#x2019;s terms, commissions, corrections, and bonuses&#x2014;without reloading the page.&lt;/p&gt;&#xD;
-&lt;h2&gt;Banners for your benefit&lt;/h2&gt;&#xD;
-&lt;p&gt;You can easily upload banners and text links to drive traffic to new product lines. Plus, you can promote offers like free shipping, coupons, and percentage-off discounts.&lt;/p&gt;&#xD;
-&lt;h2&gt;Stay in touch, easily&lt;/h2&gt;&#xD;
-&lt;p&gt;Communication is key, so we&#x2019;ve made reaching out to affiliates as simple as possible. Our affiliate program comes complete with a newsletter subscription and a built-in email feature. You&#x2019;ll enjoy easy, effective communication with your top publishers.&lt;/p&gt;&#xD;
-&lt;h2&gt;Track your progress&lt;/h2&gt;&#xD;
-&lt;p&gt;eBay Enterprise Affiliate really works&#x2014;and you can track it yourself. Monitor robust reports, including transaction summaries, commission totals, and link performances. Then use the data to optimize your program.&lt;/p&gt;&#xD;
-&lt;h2&gt;Stay socially connected&lt;/h2&gt;&#xD;
-&lt;p&gt;Leverage your most loyal customers and brand advocates while driving commerce. Our program&#x2019;s private-label peer platform makes it easy to share products and special promotions via Facebook, Twitter, and email.&lt;/p&gt;&#xD;
-&lt;h2&gt;Enjoy unparalleled support&lt;/h2&gt;&#xD;
-&lt;p&gt;If you have questions, problems, or difficulties with your account, simply click the customer support tab to submit a ticket. The request will be sent straight to qualified eBay Enterprise Affiliate customer service representatives, and they&#x2019;ll respond immediately.&lt;/p&gt;&#xD;
-&lt;h2&gt;How to get started:&lt;/h2&gt;&#xD;
-&lt;ol&gt;&#xD;
-&lt;li&gt;Install extension from the Magento Connect store&lt;/li&gt;&#xD;
-&lt;li&gt;Under System Configuration, you&#x2019;ll find eBay Enterprise Marketing Solutions on the left hand navigation pane. Click to begin Affiliate installation.&lt;/li&gt;&#xD;
-&lt;li&gt;Select &#x201C;Yes&#x201D; to enable Affiliate tracking.&lt;/li&gt;&#xD;
-&lt;li&gt;Insert your unique Program ID (PID) into the extension.  If you do not yet have a PID, click on the &#x201C;Register Now&#x201D; link to register for an account.&lt;/li&gt;&#xD;
-&lt;li&gt;Select &#x201C;Yes&#x201D; for itemized orders, unless otherwise instructed.&lt;/li&gt;&#xD;
-&lt;li&gt;Set export path to a directory accessible via FTP.&lt;/li&gt;&#xD;
-&lt;li&gt;Place test transaction to confirm installation.&lt;/li&gt;&#xD;
-&lt;/ol&gt;</description>
-    <notes>First Release</notes>
-    <authors><author><name>Michael A. Smith</name><user>kojiro</user><email>msmith3@ebay.com</email></author><author><name>Scott van Brug</name><user>scottvanbrug</user><email>svanbrug@ebay.com</email></author><author><name>Michael West</name><user>MikeWest</user><email>micwest@ebay.com</email></author><author><name>Michael Phang</name><user>mphang6432</user><email>mphang@ebay.com</email></author><author><name>Adam Hobson</name><user>adhobson</user><email>adhobson@ebay.com</email></author><author><name>Reginald Gabriel</name><user>rgabriel</user><email>rgabriel@ebay.com</email></author></authors>
-    <date>2014-05-09</date>
-    <time>19:30:37</time>
-    <contents><target name="mageetc"><dir name="modules"><file name="EbayEnterprise_Affiliate.xml" hash="c3a7b9a2113ad859d20cea7e452a3982"/></dir></target><target name="magecommunity"><dir name="EbayEnterprise"><dir name="Affiliate"><dir name="Block"><file name="Beacon.php" hash="e14207b9ce4aceec578d6be1b929e1fe"/></dir><dir name="Exception"><file name="Configuration.php" hash="65542b125d2ead6007353db0ee1c6885"/></dir><dir name="Helper"><file name="Config.php" hash="ac3fc4ad23d9eb7c643b9fa03470df92"/><file name="Data.php" hash="49e35c3ef95dcc1abc0082569a559c70"/><dir name="Map"><file name="Order.php" hash="edd9946b73e0fbe21b6715748334d0de"/><file name="Product.php" hash="97444501356a60bcc423cba6c457337c"/></dir><file name="Map.php" hash="d266381ad5dff9c4d774afc3a6bb14d9"/></dir><dir name="Model"><dir name="Feed"><file name="Abstract.php" hash="ed4bcacbc43af20d68f9aa66d055de2c"/><dir name="Order"><file name="Abstract.php" hash="842e746eb3d049d2112b130dc3e465da"/><file name="Basic.php" hash="4cdd308dd1209052934be1c1cf5bb8ed"/><file name="Itemized.php" hash="f6c510a28381cfdb9760fdddb7581b0f"/></dir><file name="Product.php" hash="9828991bccc6ec34a6c4632dd47ea70c"/></dir><file name="Observer.php" hash="3e7022180266d5e6c54b9945d1f3a7a3"/><dir name="System"><dir name="Config"><dir name="Source"><file name="Attributes.php" hash="4bf9ee9194e49a5a5790f9e319afd4fa"/><file name="Categories.php" hash="4d7ce8590af1007d0478166268953628"/><file name="Stockquantity.php" hash="e0ae4a9f912c54e0e031d1787c01a082"/><file name="Stockyesno.php" hash="951ce3efa1d8c665a57b888b8aaced52"/><file name="Transactiontype.php" hash="c5e692ee61ae43b4ba4906dba8882286"/><file name="Visibilityyesno.php" hash="fd36e0f36e740ade056d3bab6798cdab"/></dir></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="d0477ee491b0d801bec3776a9d973b53"/><file name="config.xml" hash="7285f83ecd87c5964c993812d8ad05a0"/><file name="system.xml" hash="81cddbe43ec09285b07bde7e5a215130"/></dir><dir name="sql"><dir name="eems_affiliate_setup"><file name="install-1.0.0.1.php" hash="2c49a4637831affbce446f997e07efe7"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="eems_affiliate"><file name="beacon.phtml" hash="73aabddbd2bf4cb81927e69290abc59f"/></dir></dir><dir name="layout"><file name="eems_affiliate.xml" hash="db291e14f3ddf8e9364357b477627d67"/></dir></dir></dir></dir></target></contents>
+    <summary>eBay Enterprise Affiliate Extension.</summary>
+    <description>eBay Enterprise Affiliate Extension.</description>
+    <notes>Use discounted amounts for order totals.</notes>
+    <authors><author><name>Michael A. Smith</name><user>msmith3</user><email>msmith3@ebay.com</email></author><author><name>Michael Phang</name><user>mphang</user><email>mphang@ebay.com</email></author><author><name>Scott van Brug</name><user>svanbrug</user><email>svanbrug@ebay.com</email></author><author><name>Mike West</name><user>micwest</user><email>micwest@ebay.com</email></author><author><name>Reginald Gabriel</name><user>rgabriel</user><email>rgabriel@ebay.com</email></author></authors>
+    <date>2014-05-20</date>
+    <time>20:16:10</time>
+    <contents><target name="magecommunity"><dir name="EbayEnterprise"><dir name="Affiliate"><dir name="Block"><file name="Beacon.php" hash="71e559204118de2d2cd865ed3066901e"/></dir><dir name="Exception"><file name="Configuration.php" hash="65542b125d2ead6007353db0ee1c6885"/></dir><dir name="Helper"><file name="Config.php" hash="ac3fc4ad23d9eb7c643b9fa03470df92"/><file name="Data.php" hash="49e35c3ef95dcc1abc0082569a559c70"/><dir name="Map"><file name="Order.php" hash="e22c43240fe1b9a4acce75c356c07ce2"/><file name="Product.php" hash="97444501356a60bcc423cba6c457337c"/></dir><file name="Map.php" hash="d266381ad5dff9c4d774afc3a6bb14d9"/></dir><dir name="Model"><dir name="Feed"><file name="Abstract.php" hash="ed4bcacbc43af20d68f9aa66d055de2c"/><dir name="Order"><file name="Abstract.php" hash="842e746eb3d049d2112b130dc3e465da"/><file name="Basic.php" hash="4cdd308dd1209052934be1c1cf5bb8ed"/><file name="Itemized.php" hash="a546060ab5fbbafc1091d64578e25e99"/></dir><file name="Product.php" hash="9828991bccc6ec34a6c4632dd47ea70c"/></dir><file name="Observer.php" hash="3e7022180266d5e6c54b9945d1f3a7a3"/><dir name="System"><dir name="Config"><dir name="Source"><file name="Attributes.php" hash="4bf9ee9194e49a5a5790f9e319afd4fa"/><file name="Categories.php" hash="4d7ce8590af1007d0478166268953628"/><file name="Stockquantity.php" hash="e0ae4a9f912c54e0e031d1787c01a082"/><file name="Stockyesno.php" hash="951ce3efa1d8c665a57b888b8aaced52"/><file name="Transactiontype.php" hash="c5e692ee61ae43b4ba4906dba8882286"/><file name="Visibilityyesno.php" hash="fd36e0f36e740ade056d3bab6798cdab"/></dir></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="d0477ee491b0d801bec3776a9d973b53"/><file name="config.xml" hash="7285f83ecd87c5964c993812d8ad05a0"/><file name="system.xml" hash="81cddbe43ec09285b07bde7e5a215130"/></dir><dir name="sql"><dir name="eems_affiliate_setup"><file name="install-1.0.0.1.php" hash="2c49a4637831affbce446f997e07efe7"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="eems_affiliate.xml" hash="db291e14f3ddf8e9364357b477627d67"/></dir><dir name="template"><dir name="eems_affiliate"><file name="beacon.phtml" hash="73aabddbd2bf4cb81927e69290abc59f"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="EbayEnterprise_Affiliate.xml" hash="c3a7b9a2113ad859d20cea7e452a3982"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.3.0</min><max>5.3.99</max></php></required></dependencies>
 </package>
