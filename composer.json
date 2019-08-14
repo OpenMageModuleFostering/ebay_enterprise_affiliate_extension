@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/eBay_Enterprise_Affiliate_Extension",
+    "type": "magento-module",
+    "license": "eBay-Enterprise-Magento-Extensions-End-User-License-Agreement",
+    "homepage": "",
+    "description": "Connect with 200+ affiliate publishers, generate reports, expand customer outreach, and drive sales.",
+    "authors": [
+    {
+        "name": "Michael A. Smith",
+        "email": "msmith3@ebay.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
