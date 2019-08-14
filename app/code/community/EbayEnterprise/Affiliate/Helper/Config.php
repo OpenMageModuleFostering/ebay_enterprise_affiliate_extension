@@ -159,6 +159,28 @@ class EbayEnterprise_Affiliate_Helper_Config
     }
 
     /**
+     * Get the fields that are required for the product feed
+     * @param  mixed
+     * @return array
+     */
+    public function getRequiredProductFeedFields($store = null)
+    {
+        // Following the same method magento uses to render the config page
+        $config = Mage::getSingleton('adminhtml/config');
+        $pepperjamConfig = $config->getSection('marketing_solutions', '', '');
+        $pepperjamConfig = $pepperjamConfig->groups->eems_affiliate_product_attribute_map->fields;
+        $pepperjamFields = $pepperjamConfig->asArray();
+        $requiredFields = array_keys(array_filter($pepperjamFields, function ($value) {
+            return isset($value['validate']) && in_array('required-entry', explode(' ', $value['validate']));
+        }));
+
+        $allMappedFields = $this->getProductFeedFields($store);
+        $requiredMappedFields = array_intersect_key($allMappedFields, array_flip($requiredFields));
+
+        return $requiredMappedFields;
+    }
+
+    /**
      * Get the configured product feed file name format
      * @param  mixed $store
      * @return string
