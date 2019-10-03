@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/eBay_Enterprise_Affiliate_Extension",
+    "name": "OpenMageModuleFostering\/eBay_Enterprise_Affiliate_Extension",
     "type": "magento-module",
     "license": "EULA",
     "homepage": "",
     "description": "Please use the uninstall button in the EEAN extension configuration settings. Using this uninstall method may cause issues after the extension is removed.",
     "authors": [
-    {
-        "name": "Philip Preston",
-        "email": "phpreston@pepperjam.com"
-    }
-],
+        {
+            "name": "Philip Preston",
+            "email": "phpreston@pepperjam.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
